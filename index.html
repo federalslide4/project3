@@ -1,6 +1,64 @@
-<!DOCTYPE html <!DOCTYPE html>
-<html>
-	<head>
-		<title>Calculatore Pizza</title>
-	</head>
+<html lang="de">
+<head>
+    <title>Kaliberumrchnung INCH-MM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #202124;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background-color: #303134;
+            padding: 20px;
+			border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: inline-block;
+        }
+        input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1em;
+            width: calc(100% - 22px);
+			background-color: #575757;
+			color: white;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #b10000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #990101;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+			color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style=color:white>Kaliberumrechnung INCH-MM</h1>
+        <input type="number" id="inch" placeholder="MM" step="0.01" min="0">
+        <button onclick="INCH-MM()">KONVERTIERE</button>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+        function INCH-MM() {
+            const inch = document.getElementById('inch').value;
+            if (inch === "") {
+                alert("In Metric Millimeters:");
+                return;
+            }
+            const mm = inch * 25.4;
+            document.getElementById('result').innerText = `${inch} Inch = ${mm.toFixed(2)} Mm`;
+        }
+    </script>
+</body>
 </html>
