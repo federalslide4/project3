@@ -1,6 +1,6 @@
 <html lang="de">
 <head>
-    <title>Kaliberumrchnung INCH-MM</title>
+    <title>Kaliberumrechnung INCH-MM</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -45,19 +45,19 @@
 <body>
     <div class="container">
         <h1 style=color:white>Kaliberumrechnung INCH-MM</h1>
-        <input type="number" id="inch" placeholder="MM" step="0.01" min="0">
-        <button onclick="INCH-MM()">KONVERTIERE</button>
+        <input type="number" id="inh" placeholder="Inch" step="0.01" min="0">
+        <button onclick="convertToSchilling()">KONVERTIERE</button>
         <div class="result" id="result"></div>
     </div>
     <script>
-        function INCH-MM() {
-            const inch = document.getElementById('inch').value;
-            if (inch === "") {
-                alert("In Metric Millimeters:");
+        function convertToSchilling() {
+            const inh = document.getElementById('inh').value;
+            if (inh === "") {
+                alert("GEBEN SIE DEN BETRAG IN INCH EIN");
                 return;
             }
-            const mm = inch * 25.4;
-            document.getElementById('result').innerText = `${inch} Inch = ${mm.toFixed(2)} Mm`;
+            const mm = inh * 25.4;
+            document.getElementById('result').innerText = `${inh} Inch = ${mm.toFixed(2)} MM`;
         }
     </script>
 </body>
